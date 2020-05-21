@@ -11,6 +11,11 @@ public class Reservation extends AbstractEntity{
 	private Passenger passenger;
 	@OneToOne
 	private Flight flight;
+	
+	public Reservation()
+	{
+		System.out.println("Reservation Initialised");
+	}
 
 	public Boolean getCheckedIn() {
 		return checkedIn;
