@@ -40,6 +40,7 @@ public class UserController {
 
 	}
 
+	
 	@RequestMapping("/showLogin")
 	public String showLoginPage() {
 		//LOGGER.info("Inside showLoginPage()");

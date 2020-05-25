@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Flight Reservation Application</title>
+</head>
+<body>
+<h2>Welcome to the flight Reservation</h2>
+New Users Click here to Register- <a href="/showReg">Register</a><br>
+Existing Users Click here for login- <a href="/showLogin">Login</a> 
+
+</body>
+</html>
