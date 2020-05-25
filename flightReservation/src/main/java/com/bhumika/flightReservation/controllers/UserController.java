@@ -16,23 +16,42 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
-	
-	
+
+//	@Autowired
+//	private SecurityService securityService;
+//	
+//	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+
+//	@Autowired
+//	private BCryptPasswordEncoder encoder;
+
 	@RequestMapping("/showReg")
 	public String showRegistrationPage() {
-		System.out.println("Mappeed showReg");
 		return "login/registerUser";
 	}
-	@RequestMapping(value="registerUser",method=RequestMethod.POST)
+
+	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
 	public String register(@ModelAttribute("user") User user) {
+//		LOGGER.info("Inside register()" + user);
+//		user.setPassword(encoder.encode(user.getPassword()));
+		System.out.println("user  "+user);
 		userRepository.save(user);
 		return "login/login";
-		
+
 	}
+
+	@RequestMapping("/showLogin")
+	public String showLoginPage() {
+		//LOGGER.info("Inside showLoginPage()");
+		return "login/login";
+	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam("email") String email, @RequestParam("password") String password,
 			ModelMap modelMap) {
-		User user=userRepository.findByEmail(email);
+		User user =userRepository.findByEmail(email);
+//		boolean loginResponse = securityService.login(email, password);
+//		LOGGER.info("Inside login() and the email is: " + email);
 		if (user.getPassword().equals(password)) {
 			return "findFlights";
 		} else {

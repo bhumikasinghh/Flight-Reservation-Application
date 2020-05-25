@@ -21,4 +21,3 @@ public class AbstractEntity {
 		this.id = id;
 	}
 }
-

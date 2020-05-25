@@ -1,0 +1,5 @@
+package com.bhumika.flightReservation.service;
+
+public interface ReservationServiceImpl extends ReservationService {
+
+}

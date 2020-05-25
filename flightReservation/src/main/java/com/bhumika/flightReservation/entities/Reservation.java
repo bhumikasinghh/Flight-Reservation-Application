@@ -1,5 +1,4 @@
 package com.bhumika.flightReservation.entities;
-
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -11,11 +10,6 @@ public class Reservation extends AbstractEntity{
 	private Passenger passenger;
 	@OneToOne
 	private Flight flight;
-	
-	public Reservation()
-	{
-		System.out.println("Reservation Initialised");
-	}
 
 	public Boolean getCheckedIn() {
 		return checkedIn;

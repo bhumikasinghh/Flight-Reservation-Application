@@ -1,5 +1,4 @@
 package com.bhumika.flightReservation.entities;
-
 import javax.persistence.Entity;
 
 @Entity
@@ -52,4 +51,5 @@ public class Passenger extends AbstractEntity{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 }
