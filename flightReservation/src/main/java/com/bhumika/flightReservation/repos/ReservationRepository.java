@@ -6,4 +6,7 @@ import com.bhumika.flightReservation.entities.Reservation;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
+	Reservation findAllById(Long id);
+	
+
 }
