@@ -1,8 +1,0 @@
-package com.bhumika.flightReservation.service;
-
-import com.bhumika.flightReservation.dto.ReservationRequest;
-import com.bhumika.flightReservation.entities.Reservation;
-
-public class ReservationService {
-	public Reservation bookFlight(ReservationRequest request) ;
-}

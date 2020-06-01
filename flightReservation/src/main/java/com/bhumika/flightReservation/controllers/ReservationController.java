@@ -1,7 +1,6 @@
 package com.bhumika.flightReservation.controllers;
 
-import java.util.List;
-import java.util.Optional;
+import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,18 +29,18 @@ public class ReservationController {
 	@RequestMapping("/showCompleteReservation")
 	public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap modelMap) {
 		Flight flight = flightRepository.findAllById(flightId);
-		//modelMap.addAttribute("flight", flight);
-//		if (flight.isPresent()) {
-//			modelMap.addAttribute("flight", flight);
-//		} else {
-//		   System.out.print("not present");
-//		}
+		modelMap.addAttribute("flight", flight);
+		if (flight.isPresent()) {
+			modelMap.addAttribute("flight", flight);
+		} else {
+		   System.out.print("not present");
+		}
 		return "completeReservation";
 
 	}
 
 	@RequestMapping(value = "/completeReservation", method = RequestMethod.POST)
-	public String completeReservation(ReservationRequest request, ModelMap modelMap) {
+	public String completeReservation(ReservationRequest request, ModelMap modelMap) throws MessagingException {
 	//	LOGGER.info("completeReservation()  " + request);
 
 		Reservation reservation = reservationService.Bookflight(request);

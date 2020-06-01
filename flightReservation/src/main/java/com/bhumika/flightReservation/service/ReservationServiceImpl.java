@@ -1,6 +1,8 @@
 package com.bhumika.flightReservation.service;
 
-import java.util.List;
+
+
+import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ import com.bhumika.flightReservation.entities.Reservation;
 import com.bhumika.flightReservation.repos.FlightRepository;
 import com.bhumika.flightReservation.repos.PassengerRepository;
 import com.bhumika.flightReservation.repos.ReservationRepository;
+import com.bhumika.flightReservation.util.EmailUtil;
+import com.bhumika.flightReservation.util.PDFGenerator;
 @Service
 public class ReservationServiceImpl implements ReservationService {
 	
@@ -23,9 +27,15 @@ public class ReservationServiceImpl implements ReservationService {
 	
 	@Autowired
 	ReservationRepository reservationRepository;
+	
+	@Autowired
+	PDFGenerator pdfGenerator;
+
+	@Autowired
+	EmailUtil emailUtil;
 
 	@Override
-	public Reservation Bookflight(ReservationRequest request) {
+	public Reservation Bookflight(ReservationRequest request) throws MessagingException {
 		
 	Long flightId=request.getFlightId();
 	Flight flight=flightRepository.findAllById(flightId);
@@ -42,6 +52,11 @@ public class ReservationServiceImpl implements ReservationService {
 	reservation.setPassenger(savedPassenger);
 	reservation.setCheckedIn(false);
 	Reservation savedReservation=reservationRepository.save(reservation);
+	
+	
+	String filePath = "C:/Users/bhumika.singh/ProjectFlightReservation/reservations"+savedReservation.getId()+".pdf()";
+	pdfGenerator.generateItinerary(savedReservation, filePath);
+	emailUtil.sendItinerary(passenger.getEmail(), filePath);
 	return savedReservation;
 		
 		

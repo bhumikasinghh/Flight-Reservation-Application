@@ -66,4 +66,9 @@ public class Flight extends AbstractEntity{
 	public Timestamp getEstimatedDepartureTime() {
 		return estimatedDepartureTime;
 	}
+
+	public boolean isPresent() {
+		
+		return false;
+	}
 }

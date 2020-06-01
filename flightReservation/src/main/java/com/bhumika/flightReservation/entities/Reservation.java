@@ -1,6 +1,4 @@
 package com.bhumika.flightReservation.entities;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
