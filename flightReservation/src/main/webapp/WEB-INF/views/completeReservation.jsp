@@ -7,31 +7,73 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<title>User Login</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/compreservation.css">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <title>Complete Reservation</title>
 </head>
 <body>
-<h2>Complete Reservation</h2>
-Airline: ${flight.operatingAirlines}<br/>
-Departure City: ${flight.departureCity}<br/>
-Arrival City: ${flight.arrivalCity}<br/>
+		<div class="main-w3layouts wrapper">
+		  <h2 style="text-align:center">Complete Reservation</h2>
+		      <div class="main-agileinfo">
+					<div class="agileits-top">
+					Airline: ${flight.operatingAirlines}<br/>
+					Departure City: ${flight.departureCity}<br/>
+					Arrival City: ${flight.arrivalCity}<br/>
 
 <form action="completeReservation" method="post"/>
-<pre>
-<h2>Passenger Details:</h2>
-First Name:<input type="text" name="passengerFirstName"/>
-Last Name:<input type="text" name="passengerLastName"/>
-Email:<input type="text" name="passengerEmail"/>
-Phone:<input type="text" name="passengerPhone"/>
 
-<h2>Card Details:</h2>
-Name on the card:<input type="text" name="nameOnTheCard"/>
-Card No:<input type="text" name="cardNumber"/>
-Expiry Date:<input type="text" name="expirationDate"/>
-Three Digit Sec Code:<input type="text" name="securityCode"/>
+		<h2 style="text-align:center">Passenger Details</h2>
+		First Name<input type="text" name="passengerFirstName" />
+		Last Name<input type="text" name="passengerLastName"/>
+		Email<input type="text" name="passengerEmail"/>
+		Phone<input type="text" name="passengerPhone"/>
+		
+		<h2 style="text-align:center">Card Details</h2>
+		Name on the card<input type="text" name="nameOnTheCard"/>
+		Card No<input type="text" name="cardNumber"/>
+		Expiry Date<input type="text" name="expirationDate"/>
+		Three Digit Sec Code<input type="text" name="securityCode"/>
+		
+		<input type="hidden" name="flightId" value="${flight.id}"/>
+							<div class="wthree-text">
+					</div>
+         <input type="submit" value="Confirm"/>
 
-<input type="hidden" name="flightId" value="${flight.id}"/>
-<input type="submit" value="confirm"/>
-</pre>
 </form>
+</div>
+		</div>
+		
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

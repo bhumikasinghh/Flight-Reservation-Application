@@ -6,6 +6,7 @@ import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bhumika.flightReservation.dto.ReservationRequest;
 import com.bhumika.flightReservation.entities.Flight;
@@ -34,7 +35,9 @@ public class ReservationServiceImpl implements ReservationService {
 	@Autowired
 	EmailUtil emailUtil;
 
+	
 	@Override
+	@Transactional
 	public Reservation Bookflight(ReservationRequest request) throws MessagingException {
 		
 	Long flightId=request.getFlightId();
