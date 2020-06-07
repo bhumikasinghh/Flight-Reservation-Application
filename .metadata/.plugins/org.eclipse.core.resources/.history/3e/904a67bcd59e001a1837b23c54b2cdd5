@@ -1,5 +1,0 @@
-package com.bhumika.flightReservation.dto;
-
-public class ReservationUpdateRequest {
-
-}

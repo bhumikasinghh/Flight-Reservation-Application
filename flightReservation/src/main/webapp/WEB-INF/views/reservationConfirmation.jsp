@@ -23,6 +23,7 @@
 			<div class="row justify-content-center">${msg}</div>
 			<div class="row justify-content-center"><h3>WISHING YOU A VERY HAPPY JOURNEY</h3></div>
 <div class="clear"> </div>
+			
                    </div>
 			</div>
 		</div>
